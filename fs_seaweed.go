@@ -9,7 +9,7 @@ import (
 var FS = fsService{_FileSyses: make(map[string]interfaces.SeaweedFS)}
 
 type fsService struct {
-	_Mtx sync.RWMutex
+	_Mtx       sync.RWMutex
 	_FileSyses map[string]interfaces.SeaweedFS
 }
 
@@ -28,4 +28,3 @@ func (my *fsService) Path(prePath string) interfaces.SeaweedFS {
 
 	return fileSys
 }
-

@@ -40,7 +40,8 @@ const (
 	KEY_DATA_SOURCE_NAME_MYSQL    = "%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local"
 	KEY_DATA_SOURCE_NAME_POSTGRES = "user=%s password=%s host=%s port=%s dbname=%s sslmode=disable TimeZone=Asia/Shanghai"
 
-	KEY_SEAWEED_FS_FILE_LIST_JSON = "%s?pretty=y"
+	// fix fs vuln/cnvd page list default 100 limit & url param splice error
+	KEY_SEAWEED_FS_FILE_LIST_JSON = "%s?pretty=y&limit=10000"
 	KEY_SEAWEED_FS_FILE_INFO_JSON = "%s?metadata=true&pretty=yes"
 )
 

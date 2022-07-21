@@ -119,6 +119,9 @@ func (my *SeaweedFS) Upload(path string, content []byte) error {
 	return nil
 }
 
+
+
+
 func (my *SeaweedFS) Delete(path string) error {
 	url := my.url(path)
 	req := my._CLIENT.R()
