@@ -3,8 +3,8 @@ package driver
 import (
 	"errors"
 	"fmt"
-	"github.com/Tsuki124/crawlab-sdk/internal/config"
-	"github.com/Tsuki124/crawlab-sdk/internal/constants"
+	"github.com/LycsHub/crawlab-sdk/internal/config"
+	"github.com/LycsHub/crawlab-sdk/internal/constants"
 	"github.com/crawlab-team/go-trace"
 	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"

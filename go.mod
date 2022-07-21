@@ -1,4 +1,4 @@
-module github.com/Tsuki124/crawlab-sdk
+module github.com/LycsHub/crawlab-sdk
 
 go 1.17
 

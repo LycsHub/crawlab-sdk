@@ -1,8 +1,8 @@
 package crawlab_sdk
 
 import (
-	"github.com/Tsuki124/crawlab-sdk/internal/engines"
-	"github.com/Tsuki124/crawlab-sdk/internal/interfaces"
+	"github.com/LycsHub/crawlab-sdk/internal/engines"
+	"github.com/LycsHub/crawlab-sdk/internal/interfaces"
 	"sync"
 )
 

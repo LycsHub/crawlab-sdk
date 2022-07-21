@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/Tsuki124/crawlab-sdk/internal/constants"
-	"github.com/Tsuki124/crawlab-sdk/internal/interfaces"
+	"github.com/LycsHub/crawlab-sdk/internal/constants"
+	"github.com/LycsHub/crawlab-sdk/internal/interfaces"
 	"os"
 )
 

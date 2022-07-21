@@ -1,7 +1,7 @@
 package engines
 
 import (
-	"github.com/Tsuki124/crawlab-sdk/internal/interfaces"
+	"github.com/LycsHub/crawlab-sdk/internal/interfaces"
 	"github.com/crawlab-team/go-trace"
 	"gorm.io/gorm"
 	"strings"
