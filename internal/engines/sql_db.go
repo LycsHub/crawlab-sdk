@@ -21,6 +21,13 @@ func NewSQLDb(name string) interfaces.SQLDb {
 	return &SQLDb{_DB: db}
 }
 
+func (my *SQLDb) RawSQL(sql string) error {
+	var gormDb *gorm.DB
+	gormDb =  my._DB.Exec(sql)
+	return gormDb.Error
+}
+
+
 func (my *SQLDb) CreateTB(models ...interface{}) error {
 	for _,model := range models {
 		err := my._DB.AutoMigrate(model)
