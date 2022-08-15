@@ -13,7 +13,7 @@ type SQLTb struct {
 }
 
 func trimSQLReturnID(sql string) string {
-	return strings.TrimRight(sql,`RETURNING "id"`)
+	return strings.TrimSuffix(sql,`RETURNING "id"`)
 }
 
 func (my *SQLTb) Exec(queryFn func(tx *gorm.DB) *gorm.DB) error  {
