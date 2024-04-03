@@ -3,7 +3,7 @@ package engines
 import (
 	"github.com/LycsHub/crawlab-sdk/internal/interfaces"
 	"github.com/crawlab-team/go-trace"
-	"gorm.io/gorm"
+	"github.com/zsmj-xu/gorm"
 	"strings"
 )
 
@@ -13,26 +13,25 @@ type SQLTb struct {
 }
 
 func trimSQLReturnID(sql string) string {
-	return strings.TrimSuffix(sql,`RETURNING "id"`)
+	return strings.TrimSuffix(sql, `RETURNING "id"`)
 }
 
-func (my *SQLTb) Exec(queryFn func(tx *gorm.DB) *gorm.DB) error  {
+func (my *SQLTb) Exec(queryFn func(tx *gorm.DB) *gorm.DB) error {
 	return trace.Error(queryFn(my._InstanceFn()).Error)
 }
 
-func (my *SQLTb) ExecToSQL(queryFn func(tx *gorm.DB) *gorm.DB) (sql string,err error)   {
+func (my *SQLTb) ExecToSQL(queryFn func(tx *gorm.DB) *gorm.DB) (sql string, err error) {
 	err = queryFn(my._InstanceFn()).Error
-	if err!=nil {
-		return "",trace.Error(err)
+	if err != nil {
+		return "", trace.Error(err)
 	}
 
 	sql = trimSQLReturnID(my._InstanceFn().ToSQL(queryFn))
-	return sql,nil
+	return sql, nil
 }
 
-func (my *SQLTb) ToSQLExec(queryFn func(tx *gorm.DB) *gorm.DB) (sql string,err error)   {
+func (my *SQLTb) ToSQLExec(queryFn func(tx *gorm.DB) *gorm.DB) (sql string, err error) {
 	sql = trimSQLReturnID(my._InstanceFn().ToSQL(queryFn))
 	err = queryFn(my._InstanceFn()).Error
-	return sql,trace.Error(err)
+	return sql, trace.Error(err)
 }
-

@@ -10,10 +10,10 @@ require (
 	github.com/lib/pq v1.10.5
 	github.com/qiniu/qmgo v1.1.0
 	github.com/tidwall/gjson v1.14.1
+	github.com/zsmj-xu/gorm v1.26.1
 	go.mongodb.org/mongo-driver v1.9.1
 	gorm.io/driver/mysql v1.3.3
 	gorm.io/driver/postgres v1.3.5
-	gorm.io/gorm v1.23.5
 )
 
 require (
@@ -32,7 +32,7 @@ require (
 	github.com/jackc/pgtype v1.11.0 // indirect
 	github.com/jackc/pgx/v4 v4.16.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jinzhu/now v1.1.4 // indirect
+	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/logrusorgru/aurora v0.0.0-20181002194514-a7b3b318ed4e // indirect

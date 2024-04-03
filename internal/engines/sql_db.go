@@ -4,12 +4,12 @@ import (
 	"github.com/LycsHub/crawlab-sdk/internal/driver"
 	"github.com/LycsHub/crawlab-sdk/internal/interfaces"
 	"github.com/crawlab-team/go-trace"
-	"gorm.io/gorm"
+	"github.com/zsmj-xu/gorm"
 )
 
 type SQLDb struct {
 	interfaces.SQLDb
-	_DB  *gorm.DB
+	_DB *gorm.DB
 }
 
 func NewSQLDb(name string) interfaces.SQLDb {
@@ -23,22 +23,20 @@ func NewSQLDb(name string) interfaces.SQLDb {
 
 func (my *SQLDb) RawSQL(sql string) error {
 	var gormDb *gorm.DB
-	gormDb =  my._DB.Exec(sql)
+	gormDb = my._DB.Exec(sql)
 	return gormDb.Error
 }
 
-
 func (my *SQLDb) CreateTB(models ...interface{}) error {
-	for _,model := range models {
+	for _, model := range models {
 		err := my._DB.AutoMigrate(model)
-		if err!=nil {
+		if err != nil {
 			return err
 		}
 	}
 
 	return nil
 }
-
 
 func (my *SQLDb) TB(name string) interfaces.SQLTb {
 	return &SQLTb{_InstanceFn: func() *gorm.DB {
