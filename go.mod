@@ -14,6 +14,7 @@ require (
 	go.mongodb.org/mongo-driver v1.9.1
 	gorm.io/driver/mysql v1.3.3
 	gorm.io/driver/postgres v1.3.5
+	gorm.io/gorm v1.23.4
 )
 
 require (
